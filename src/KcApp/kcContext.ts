@@ -17,8 +17,8 @@ export const { kcContext } = getKcContext<
         {
             "pageId": "login.ftl",
             "locale": {
-                //When we test the login page we do it in french
-                "currentLanguageTag": "fr", 
+                //When we test the login page we do it in english
+                "currentLanguageTag": "en", 
             },
         },
         {
