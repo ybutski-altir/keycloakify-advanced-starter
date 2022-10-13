@@ -8,7 +8,7 @@
         "url": "git://github.com/garronej/keycloakify-advanced-starter.git"
     },
     "scripts": {
-        "start": "react-scripts start --watch",
+        "start": "react-scripts start",
         "build": "react-scripts build",
         "keycloak": "yarn build && keycloakify",
         "download-builtin-keycloak-theme": "download-builtin-keycloak-theme 15.0.2"

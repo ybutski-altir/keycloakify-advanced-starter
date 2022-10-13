@@ -14,6 +14,7 @@ import type { I18n } from "./i18n";
 
 import { useStyles } from './Template.styles';
 import { LandingImage } from "../components/landingImage/LandingImage";
+import { Logo } from "../components/logo/Logo";
 
 export type TemplateProps = {
     displayInfo?: boolean;
@@ -129,14 +130,15 @@ const Template = memo((props: TemplateProps) => {
         <div className={classes.container}>{/* className={cx(props.kcLoginClass)} */}{/* className={classes.container} */}
             <div className={classes.leftPart}>
                 <div id="kc-header" className={cx(props.kcHeaderClass, classes.signInHeader)}>
-                    <div id="kc-header-wrapper" className={cx(props.kcHeaderWrapperClass)}>
-                        {msg("loginTitleHtml", realm.displayNameHtml)}
+                    <div id="kc-header-wrapper" className={cx(props.kcHeaderWrapperClass, classes.logo)}>
+                        {/* {msg("loginTitleHtml", realm.displayNameHtml)} */}
+                        <Logo />
                     </div>
                 </div>
 
                 <div className={cx(props.kcFormCardClass, displayWide && props.kcFormCardAccountClass, classes.signInCard)}>
                     <header className={cx(props.kcFormHeaderClass)}>
-                        {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
+                        {/* {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
                             <div id="kc-locale">
                                 <div id="kc-locale-wrapper" className={cx(props.kcLocaleWrapperClass)}>
                                     <div className="kc-dropdown" id="kc-locale-dropdown">
@@ -155,7 +157,7 @@ const Template = memo((props: TemplateProps) => {
                                     </div>
                                 </div>
                             </div>
-                        )}
+                        )} */}
                         {!(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
                             displayRequiredFields ? (
                                 <div className={cx(props.kcContentWrapperClass)}>
@@ -166,11 +168,11 @@ const Template = memo((props: TemplateProps) => {
                                         </span>
                                     </div>
                                     <div className="col-md-10">
-                                        <h1 id="kc-page-title">{headerNode}</h1>
+                                        <h1 id="kc-page-title" className={classes.formTitle}>{headerNode}</h1>
                                     </div>
                                 </div>
                             ) : (
-                                <h1 id="kc-page-title">{headerNode}</h1>
+                                <h1 id="kc-page-title" className={classes.formTitle}>{headerNode}</h1>
                             )
                         ) : displayRequiredFields ? (
                             <div className={cx(props.kcContentWrapperClass)}>

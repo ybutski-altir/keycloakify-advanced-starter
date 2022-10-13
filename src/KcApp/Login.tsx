@@ -44,6 +44,7 @@ const Login = memo(
                 {...{ kcContext, i18n, doFetchDefaultThemeResources, ...props }}
                 displayInfo={social.displayInfo}
                 displayWide={realm.password && social.providers !== undefined}
+                displayMessage={false}
                 headerNode={msg("doLogIn")}
                 formNode={
                     <div id="kc-form" className={cx(realm.password && social.providers !== undefined && props.kcContentWrapperClass)}>

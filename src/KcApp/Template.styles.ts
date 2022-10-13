@@ -1,6 +1,6 @@
 import makeStyles from '@mui/styles/makeStyles';
 
-export const useStyles = makeStyles((/* theme */) => ({
+export const useStyles = makeStyles((/* theme: Theme */) => ({
   container: {
     background: 'white',
     height: '100vh',
@@ -29,10 +29,6 @@ export const useStyles = makeStyles((/* theme */) => ({
     /* [theme.breakpoints.down('tablet')]: {
       margin: 0,
     }, */
-  },
-
-  logo: {
-    /* paddingBottom: theme.spacing(8), */
   },
 
   title: {
@@ -123,7 +119,7 @@ export const useStyles = makeStyles((/* theme */) => ({
   },
 
   signInCard: {
-    border: '3px solid red',
+    /* border: '3px solid red', */
   },
 
   leftPart: {
@@ -134,7 +130,19 @@ export const useStyles = makeStyles((/* theme */) => ({
     flex: 1,
   },
 
-  signInHeader:{
+  signInHeader: {
     textAlign: 'center'
+  },
+
+  logo: {
+    display: 'flex',
+    justifyContent: 'center',
+    paddingBottom: 48
+  },
+
+  formTitle: {
+    fontWeight: 500,
+    textAlign: 'center',
+    paddingBottom: 30
   }
 }));
