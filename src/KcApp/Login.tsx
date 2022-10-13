@@ -2,7 +2,8 @@
 // It is now up to us to implement a special behavior to leverage the non standard authorizedMailDomains
 
 import React, { useState, memo } from "react";
-import Template from "keycloakify/lib/components/Template";
+/* import Template from "keycloakify/lib/components/Template"; */
+import Template from "./Template";
 import type { KcProps, KcContextBase } from "keycloakify";
 import { useCssAndCx } from "keycloakify/lib/tools/useCssAndCx";
 import { useConstCallback } from "powerhooks/useConstCallback";
@@ -54,7 +55,6 @@ const Login = memo(
                         >
                             {realm.password && (
                                 <form id="kc-form-login" onSubmit={onSubmit} action={url.loginAction} method="post">
-                                    <div>TEST CUSTOM LOGIN PAGE CONTENT</div>
                                     <div className={cx(props.kcFormGroupClass)}>
                                         {(() => {
                                             const label = !realm.loginWithEmailAllowed

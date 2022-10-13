@@ -8,7 +8,7 @@
         "url": "git://github.com/garronej/keycloakify-advanced-starter.git"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "react-scripts start --watch",
         "build": "react-scripts build",
         "keycloak": "yarn build && keycloakify",
         "download-builtin-keycloak-theme": "download-builtin-keycloak-theme 15.0.2"
@@ -23,11 +23,15 @@
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "@emotion/react": "^11.9.0",
+        "@emotion/react": "^11.10.4",
+        "@emotion/styled": "^11.10.4",
+        "@mui/material": "^5.8.3",
+        "@mui/styles": "^5.8.3",
+        "@mui/system": "^5.8.3",
+        "evt": "^2.4.1",
         "keycloakify": "^6.6.3",
         "react": "18.1.0",
-        "react-dom": "18.1.0",
-        "evt": "^2.4.1"
+        "react-dom": "18.1.0"
     },
     "devDependencies": {
         "@types/node": "^15.3.1",
