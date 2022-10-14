@@ -10,6 +10,9 @@ import { useConstCallback } from "powerhooks/useConstCallback";
 import type { FormEventHandler } from "react";
 import type { I18n } from "./i18n";
 
+import { Button } from "../components/button/Button";
+import { useStyles } from './Login.styles';
+
 const Login = memo(
     ({
         kcContext,
@@ -22,6 +25,7 @@ const Login = memo(
         const { msg, msgStr } = i18n;
 
         const { cx } = useCssAndCx();
+        const classes = useStyles();
 
         const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 
@@ -45,7 +49,7 @@ const Login = memo(
                 displayInfo={social.displayInfo}
                 displayWide={realm.password && social.providers !== undefined}
                 displayMessage={false}
-                headerNode={msg("doLogIn")}
+                headerNode={msg("loginAccountTitle")}
                 formNode={
                     <div id="kc-form" className={cx(realm.password && social.providers !== undefined && props.kcContentWrapperClass)}>
                         <div
@@ -136,7 +140,7 @@ const Login = memo(
                                             )}
                                         </div>
                                     </div>
-                                    <div id="kc-form-buttons" className={cx(props.kcFormGroupClass)}>
+                                    <div id="kc-form-buttons" className={cx(props.kcFormGroupClass, classes.submitWrapper)}>
                                         <input
                                             type="hidden"
                                             id="id-hidden-input"
@@ -147,20 +151,17 @@ const Login = memo(
                                                   }
                                                 : {})}
                                         />
-                                        <input
+                                        <Button
                                             tabIndex={4}
-                                            className={cx(
-                                                props.kcButtonClass,
-                                                props.kcButtonPrimaryClass,
-                                                props.kcButtonBlockClass,
-                                                props.kcButtonLargeClass
-                                            )}
+                                            className={classes.submitButton}
                                             name="login"
                                             id="kc-login"
                                             type="submit"
                                             value={msgStr("doLogIn")}
                                             disabled={isLoginButtonDisabled}
-                                        />
+                                        >
+                                            {msgStr("doLogIn")}
+                                        </Button>
                                     </div>
                                 </form>
                             )}
