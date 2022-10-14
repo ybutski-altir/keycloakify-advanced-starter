@@ -109,12 +109,13 @@ const Login = memo(
                                             autoComplete="off"
                                         />
                                     </div>
-                                    <div className={cx(props.kcFormGroupClass, props.kcFormSettingClass)}>
+                                    <div className={cx(props.kcFormGroupClass, props.kcFormSettingClass, classes.passwordNotesWrapper)}>
                                         <div id="kc-form-options">
                                             {realm.rememberMe && !usernameEditDisabled && (
-                                                <div className="checkbox">
+                                                <div className={cx("checkbox", classes.remeberCheckboxWrapper)}>
                                                     <label>
                                                         <input
+                                                            className={classes.rememberCheckbox}
                                                             tabIndex={3}
                                                             id="rememberMe"
                                                             name="rememberMe"
@@ -133,7 +134,7 @@ const Login = memo(
                                         <div className={cx(props.kcFormOptionsWrapperClass)}>
                                             {realm.resetPasswordAllowed && (
                                                 <span>
-                                                    <a tabIndex={5} href={url.loginResetCredentialsUrl}>
+                                                    <a className={classes.forgotPasswordLink} tabIndex={5} href={url.loginResetCredentialsUrl}>
                                                         {msg("doForgotPassword")}
                                                     </a>
                                                 </span>

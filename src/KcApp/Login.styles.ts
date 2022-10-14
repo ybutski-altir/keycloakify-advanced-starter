@@ -10,5 +10,29 @@ export const useStyles = makeStyles(() => ({
   submitWrapper: {
     display: 'flex',
     flexDirection: 'row-reverse'
+  },
+  forgotPasswordLink: {
+    color: '#50576B',
+    fontWeight: 400,
+    letterSpacing: '1.25px',
+    textDecorationLine: 'underline',
+    fontSize: '14px',
+
+    '&:hover': {
+      color: '#161617 !important'
+    }
+  },
+  passwordNotesWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  remeberCheckboxWrapper: {
+    fontSize: '14px',
+    color: '#50576B'
+  },
+  rememberCheckbox: {
+    height: '16px',
+    width: '16px',
   }
 }));
