@@ -34,5 +34,22 @@ export const useStyles = makeStyles(() => ({
   rememberCheckbox: {
     height: '16px',
     width: '16px',
-  }
+  },
+  passwordField: {
+    color: '#ABB2C2',
+    backgroundColor: '#F5F6FA',
+
+    '& .MuiInputLabel-root': {
+      fontSize: 14
+    },
+    '& .MuiInputLabel-shrink': {
+      fontSize: 10
+    },
+    '& .MuiInputBase-input': {
+      fontSize: 14
+    },
+    '& .MuiInputBase-root': {
+      height: 40
+    }
+  },
 }));

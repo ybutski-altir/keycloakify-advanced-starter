@@ -11,7 +11,9 @@ import type { FormEventHandler } from "react";
 import type { I18n } from "./i18n";
 
 import { Button } from "../components/button/Button";
+import { PasswordField } from "../components/passwordField/PasswordField";
 import { useStyles } from './Login.styles';
+import { fontSize, fontWeight } from "@mui/system";
 
 const Login = memo(
     ({
@@ -97,7 +99,7 @@ const Login = memo(
                                         })()}
                                     </div>
                                     <div className={cx(props.kcFormGroupClass)}>
-                                        <label htmlFor="password" className={cx(props.kcLabelClass)}>
+                                        {/*<label htmlFor="password" className={cx(props.kcLabelClass)}>
                                             {msg("password")}
                                         </label>
                                         <input
@@ -107,6 +109,19 @@ const Login = memo(
                                             name="password"
                                             type="password"
                                             autoComplete="off"
+                                        /> */}
+                                        <PasswordField
+                                            tabIndex={2}
+                                            id="password"
+                                            className={cx(classes.passwordField)}
+                                            name="password"
+                                            /* inputProps={{style: {fontSize: 14}}}
+                                            InputLabelProps={{style: {fontSize: 10}}} */
+                                            autoComplete="off"
+                                            label={msg("password")}
+                                            placeholder={msgStr("password")}
+                                            /* error={Boolean(errors.password && touched.password)} */
+                                            /* {...getFieldProps('password')} */
                                         />
                                     </div>
                                     <div className={cx(props.kcFormGroupClass, props.kcFormSettingClass, classes.passwordNotesWrapper)}>
