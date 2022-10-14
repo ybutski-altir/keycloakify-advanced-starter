@@ -2,6 +2,7 @@ import "./KcApp.css";
 import { lazy, Suspense } from "react";
 import type { KcContext } from "./kcContext";
 import KcAppBase, { defaultKcProps } from "keycloakify";
+import Template from "keycloakify/lib/components/Template";
 import { useI18n } from "./i18n";
 
 const Login = lazy(() => import("./Login"));
@@ -38,7 +39,7 @@ export default function KcApp({ kcContext }: Props) {
                     case "terms.ftl": return <Terms {...{ kcContext, ...props }} />;
                     case "my-extra-page-1.ftl": return <MyExtraPage1 {...{ kcContext, ...props }} />;
                     case "my-extra-page-2.ftl": return <MyExtraPage2 {...{ kcContext, ...props }} />;
-                    default: return <KcAppBase {...{ kcContext, ...props }} />;
+                    default: return <KcAppBase Template={Template} {...{ kcContext, ...props }} />;
                 }
             })()}
         </Suspense>
