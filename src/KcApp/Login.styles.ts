@@ -35,7 +35,7 @@ export const useStyles = makeStyles(() => ({
     height: '16px',
     width: '16px',
   },
-  passwordField: {
+  inputField: {
     color: '#ABB2C2',
     backgroundColor: '#F5F6FA',
 
@@ -49,7 +49,7 @@ export const useStyles = makeStyles(() => ({
       fontSize: 14
     },
     '& .MuiInputBase-root': {
-      height: 40
+      height: 45
     }
   },
 }));

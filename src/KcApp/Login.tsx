@@ -12,8 +12,8 @@ import type { I18n } from "./i18n";
 
 import { Button } from "../components/button/Button";
 import { PasswordField } from "../components/passwordField/PasswordField";
+import { TextField } from "../components/textField/TextField";
 import { useStyles } from './Login.styles';
-import { fontSize, fontWeight } from "@mui/system";
 
 const Login = memo(
     ({
@@ -74,7 +74,7 @@ const Login = memo(
 
                                             return (
                                                 <>
-                                                    <label htmlFor={autoCompleteHelper} className={cx(props.kcLabelClass)}>
+                                                    {/* <label htmlFor={autoCompleteHelper} className={cx(props.kcLabelClass)}>
                                                         {msg(label)}
                                                     </label>
                                                     <input
@@ -93,6 +93,30 @@ const Login = memo(
                                                                   "autoFocus": true,
                                                                   "autoComplete": "off"
                                                               })}
+                                                    /> */}
+                                                    <TextField
+                                                        tabIndex={1}
+                                                        id={autoCompleteHelper}
+                                                        className={classes.inputField}
+                                                        //NOTE: This is used by Google Chrome auto fill so we use it to tell
+                                                        //the browser how to pre fill the form but before submit we put it back
+                                                        //to username because it is what keycloak expects.
+                                                        name={autoCompleteHelper}
+                                                        defaultValue={login.username ?? ""}
+                                                        type="email"
+                                                        label={msg(label)}
+                                                        placeholder={msgStr(label)}
+                                                        {...(usernameEditDisabled
+                                                            ? { "disabled": true }
+                                                            : {
+                                                                  "autoFocus": true,
+                                                                  "autoComplete": "off"
+                                                              })}
+                                                        /* error={Boolean(
+                                                        (errors.email || errors.password === t('errors.form.incorrectCredentials')) &&
+                                                            touched.email,
+                                                        )}
+                                                        {...getFieldProps('email')} */
                                                     />
                                                 </>
                                             );
@@ -113,10 +137,8 @@ const Login = memo(
                                         <PasswordField
                                             tabIndex={2}
                                             id="password"
-                                            className={cx(classes.passwordField)}
+                                            className={cx(classes.inputField)}
                                             name="password"
-                                            /* inputProps={{style: {fontSize: 14}}}
-                                            InputLabelProps={{style: {fontSize: 10}}} */
                                             autoComplete="off"
                                             label={msg("password")}
                                             placeholder={msgStr("password")}
