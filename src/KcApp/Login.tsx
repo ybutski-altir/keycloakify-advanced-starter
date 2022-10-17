@@ -1,8 +1,8 @@
 // This is a copy paste from https://github.com/InseeFrLab/keycloakify/blob/main/src/lib/components/Login.tsx
 // It is now up to us to implement a special behavior to leverage the non standard authorizedMailDomains
+// Default Template could be use from - import Template from "keycloakify/lib/components/Template";
 
 import React, { useState, memo } from "react";
-/* import Template from "keycloakify/lib/components/Template"; */
 import Template from "./Template";
 import type { KcProps, KcContextBase } from "keycloakify";
 import { useCssAndCx } from "keycloakify/lib/tools/useCssAndCx";
@@ -50,7 +50,6 @@ const Login = memo(
                 {...{ kcContext, i18n, doFetchDefaultThemeResources, ...props }}
                 displayInfo={social.displayInfo}
                 displayWide={realm.password && social.providers !== undefined}
-                displayMessage={false}
                 headerNode={msg("loginAccountTitle")}
                 formNode={
                     <div id="kc-form" className={cx(realm.password && social.providers !== undefined && props.kcContentWrapperClass)}>
@@ -74,26 +73,6 @@ const Login = memo(
 
                                             return (
                                                 <>
-                                                    {/* <label htmlFor={autoCompleteHelper} className={cx(props.kcLabelClass)}>
-                                                        {msg(label)}
-                                                    </label>
-                                                    <input
-                                                        tabIndex={1}
-                                                        id={autoCompleteHelper}
-                                                        className={cx(props.kcInputClass)}
-                                                        //NOTE: This is used by Google Chrome auto fill so we use it to tell
-                                                        //the browser how to pre fill the form but before submit we put it back
-                                                        //to username because it is what keycloak expects.
-                                                        name={autoCompleteHelper}
-                                                        defaultValue={login.username ?? ""}
-                                                        type="text"
-                                                        {...(usernameEditDisabled
-                                                            ? { "disabled": true }
-                                                            : {
-                                                                  "autoFocus": true,
-                                                                  "autoComplete": "off"
-                                                              })}
-                                                    /> */}
                                                     <TextField
                                                         tabIndex={1}
                                                         id={autoCompleteHelper}
@@ -123,17 +102,6 @@ const Login = memo(
                                         })()}
                                     </div>
                                     <div className={cx(props.kcFormGroupClass)}>
-                                        {/*<label htmlFor="password" className={cx(props.kcLabelClass)}>
-                                            {msg("password")}
-                                        </label>
-                                        <input
-                                            tabIndex={2}
-                                            id="password"
-                                            className={cx(props.kcInputClass)}
-                                            name="password"
-                                            type="password"
-                                            autoComplete="off"
-                                        /> */}
                                         <PasswordField
                                             tabIndex={2}
                                             id="password"

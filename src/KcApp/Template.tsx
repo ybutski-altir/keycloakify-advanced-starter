@@ -48,11 +48,7 @@ const Template = memo((props: TemplateProps) => {
         doFetchDefaultThemeResources
     } = props;
 
-    //===============
-
     const classes = useStyles();
-    
-    //===============
 
     const { cx } = useCssAndCx();
 
@@ -127,7 +123,7 @@ const Template = memo((props: TemplateProps) => {
     }
 
     return (
-        <div className={classes.container}>{/* className={cx(props.kcLoginClass)} */}{/* className={classes.container} */}
+        <div className={classes.container}>
             <div className={classes.leftPart}>
                 <div id="kc-header" className={cx(props.kcHeaderClass, classes.signInHeader)}>
                     <div id="kc-header-wrapper" className={cx(props.kcHeaderWrapperClass, classes.logo)}>
@@ -136,7 +132,7 @@ const Template = memo((props: TemplateProps) => {
                     </div>
                 </div>
 
-                <div className={cx(props.kcFormCardClass, displayWide && props.kcFormCardAccountClass, classes.signInCard)}>
+                <div className={cx(props.kcFormCardClass, displayWide && props.kcFormCardAccountClass)}>
                     <header className={cx(props.kcFormHeaderClass)}>
                         {/* {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
                             <div id="kc-locale">
