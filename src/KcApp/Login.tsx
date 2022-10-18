@@ -82,7 +82,7 @@ const Login = memo(
                                                         //to username because it is what keycloak expects.
                                                         name={autoCompleteHelper}
                                                         defaultValue={login.username ?? ""}
-                                                        type="email"
+                                                        type="text"
                                                         label={msg(label)}
                                                         placeholder={msgStr(label)}
                                                         {...(usernameEditDisabled
